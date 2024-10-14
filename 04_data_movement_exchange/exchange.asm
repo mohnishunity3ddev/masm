@@ -28,7 +28,7 @@ main proc
     mov r8d, num2
     call printf
     add rsp, 40
-
+    
     xor eax, eax
     ret
 main endp
