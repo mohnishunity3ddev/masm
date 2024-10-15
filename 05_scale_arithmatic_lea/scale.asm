@@ -29,10 +29,10 @@ scale proc
 scale endp
 
 main proc
-    sub rsp, 40     ; shadow space (32 bytes) + align (8 bytes)
-    mov ecx, [n1]   ; first arg
-    mov edx, [n2]   ; second arg
-    mov r8d, [n3]   ; third arg
+    sub rsp, 40             ; shadow space (32 bytes) + align (8 bytes)
+    mov ecx, [n1]           ; first arg
+    mov edx, [n2]           ; second arg
+    mov r8d, [n3]           ; third arg
     call scale
 
     lea rcx, [str1]         ; First argument: format string address
@@ -42,8 +42,8 @@ main proc
     mov [rsp + 32], eax     ; Store the result of scale in fifth arg for printf: 2x + 4y + 6z
     call printf
 
-    add rsp, 40      ; cleanup the stack
-    xor eax, eax     ; clear eax register
+    add rsp, 40             ; cleanup the stack
+    xor eax, eax            ; clear eax register
     ret
 main endp
 end
