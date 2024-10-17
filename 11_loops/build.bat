@@ -19,10 +19,9 @@ set BIN_DIR=bin
 REM Create the bin directory if it doesn't exist
 if not exist %BIN_DIR% mkdir %BIN_DIR%
 
-
-ml64 /c /Zi /nologo conditionals.asm
-move conditionals.obj "%BIN_DIR%\"
-link "%BIN_DIR%\conditionals.obj" /DEBUG /NOLOGO /SUBSYSTEM:console /DEFAULTLIB:kernel32.lib /DEFAULTLIB:user32.lib /DEFAULTLIB:libcmt.lib /OUT:"%BIN_DIR%\conditionals.exe"
+ml64 /c /Zi /nologo factorials.asm
+move factorials.obj "%BIN_DIR%\"
+link "%BIN_DIR%\factorials.obj" /DEBUG /NOLOGO /SUBSYSTEM:console /DEFAULTLIB:kernel32.lib /DEFAULTLIB:user32.lib /DEFAULTLIB:libcmt.lib /OUT:"%BIN_DIR%\factorials.exe"
 
 REM If successful, run the program
 if %errorlevel% equ 0 (
