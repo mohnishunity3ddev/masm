@@ -32,14 +32,6 @@ l1:
     cmp r8d, ecx    ; compare i:n
     jl l1           ; if ( i < n ) loop back to l1.
     add ecx, 2
-    jmp d1
-overflow:
-    add ecx, 2
-    mov edx, ecx
-    lea rcx, of
-    call printf
-    mov rax, 0
-    jmp d2
 d1:
     mov r12, rax     ; save s ; r12-r15 are callee-saved. saved across function calls.
     mov r13d, ecx    ; save n
@@ -48,6 +40,13 @@ d1:
     mov r8, r12      ; third arg
     call printf
     mov rax, r12
+    jmp d2
+overflow:
+    add ecx, 2
+    mov edx, ecx
+    lea rcx, of
+    call printf
+    mov rax, 0
 d2:
     add rsp, 32
     pop rbx

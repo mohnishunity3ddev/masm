@@ -23,6 +23,10 @@ ml64 /c /Zi /nologo fibonacci.asm
 move fibonacci.obj "%BIN_DIR%\"
 link "%BIN_DIR%\fibonacci.obj" /DEBUG /NOLOGO /SUBSYSTEM:console /DEFAULTLIB:kernel32.lib /DEFAULTLIB:user32.lib /DEFAULTLIB:libcmt.lib /OUT:"%BIN_DIR%\fibonacci.exe"
 
+ml64 /c /Zi /nologo prac_29.asm
+move prac_29.obj "%BIN_DIR%\"
+link "%BIN_DIR%\prac_29.obj" /DEBUG /NOLOGO /SUBSYSTEM:console /DEFAULTLIB:kernel32.lib /DEFAULTLIB:user32.lib /DEFAULTLIB:libcmt.lib /OUT:"%BIN_DIR%\prac_29.exe"
+
 REM If successful, run the program
 if %errorlevel% equ 0 (
     echo Build successful.
