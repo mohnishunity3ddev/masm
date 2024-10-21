@@ -9,13 +9,13 @@ switch_eg proc
     cmp rdx, 6                              ; Compare index:6
     ja default_case                         ; If (n > 106) goto default_case
 
-    lea r11, jump_table                     ; load address of jump_table(array)
+    lea r11, jump_table                     ; load address of jump_table(array) start
     movsxd rdx, dword ptr [r11 + rdx*4]     ; rdx: address index into the jump_table array
                                             ; (will return a negative 32 bit int) that's why
                                             ; sign extending into 64 bit rdx.
     add r11, rdx                            ; add the neg offset to jmp_table start address
                                             ; to get actual address of the label where the jump will go to
-    jmp r11                                 ; straight up jump to it.
+    jmp r11                                 ; unconditionally jump to the address
 case_100:
     lea rax, [rcx + rcx*2]                  ; 3*x
     lea rcx, [rcx + rax*4]                  ; val = 13*x
