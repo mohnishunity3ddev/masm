@@ -19,17 +19,9 @@ set BIN_DIR=bin
 REM Create the bin directory if it doesn't exist
 if not exist %BIN_DIR% mkdir %BIN_DIR%
 
-ml64 /c /Zi /nologo switch_add_eg.asm
-move switch_add_eg.obj "%BIN_DIR%\"
-link "%BIN_DIR%\switch_add_eg.obj" /DEBUG /NOLOGO /SUBSYSTEM:console /DEFAULTLIB:kernel32.lib /DEFAULTLIB:user32.lib /DEFAULTLIB:libcmt.lib /OUT:"%BIN_DIR%\switch_add_eg.exe"
-
-ml64 /c /Zi /nologo call_proc_eg_3_7_4.asm
-move call_proc_eg_3_7_4.obj "%BIN_DIR%\"
-link "%BIN_DIR%\call_proc_eg_3_7_4.obj" /DEBUG /NOLOGO /SUBSYSTEM:console /DEFAULTLIB:kernel32.lib /DEFAULTLIB:user32.lib /DEFAULTLIB:libcmt.lib /OUT:"%BIN_DIR%\call_proc_eg_3_7_4.exe"
-
-ml64 /c /Zi /nologo factorial.asm
-move factorial.obj "%BIN_DIR%\"
-link "%BIN_DIR%\factorial.obj" /DEBUG /NOLOGO /SUBSYSTEM:console /DEFAULTLIB:kernel32.lib /DEFAULTLIB:user32.lib /DEFAULTLIB:libcmt.lib /OUT:"%BIN_DIR%\factorial.exe"
+ml64 /c /Zi /nologo arrays.asm
+move arrays.obj "%BIN_DIR%\"
+link "%BIN_DIR%\arrays.obj" /DEBUG /NOLOGO /SUBSYSTEM:console /DEFAULTLIB:kernel32.lib /DEFAULTLIB:user32.lib /DEFAULTLIB:libcmt.lib /OUT:"%BIN_DIR%\arrays.exe"
 
 REM If successful, run the program
 if %errorlevel% equ 0 (

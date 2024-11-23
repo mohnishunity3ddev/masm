@@ -20,7 +20,7 @@ swap_add proc
 
     ;; doing the actual swap.
     mov r8, qword ptr [rcx]         ; *xp
-    mov r9, qword ptr [rdx]         ; *xp
+    mov r9, qword ptr [rdx]         ; *yp
     mov qword ptr [rcx], r9         ; *xp = y
     mov qword ptr [rdx], r8         ; *yp = x
 
